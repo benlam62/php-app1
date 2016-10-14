@@ -24,11 +24,12 @@
       <input type="submit" name="submit" value="Submit" />
 </form>
 <?php
-	// DB connection info
+	// DB connection info for local debug
 	//$host = "localhost";
 	//$user = "root";
 	//$pwd = "";
 
+	// DB connection info for Azure International
 	foreach ($_SERVER as $key => $value) {
     	if (strpos($key, "MYSQLCONNSTR_localdb") !== 0) {
         	continue;

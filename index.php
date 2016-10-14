@@ -25,18 +25,18 @@
 </form>
 <?php
 	// DB connection info
-	$host = "localhost";
-	$user = "root";
-	$pwd = "";
+	//$host = "localhost";
+	//$user = "root";
+	//$pwd = "";
 
-	//foreach ($_SERVER as $key => $value) {
-    //	if (strpos($key, "MYSQLCONNSTR_localdb") !== 0) {
-    //    	continue;
-    //	}
-    //	$host = preg_replace("/^.*Data Source=(.+?);.*$/", "\\1", $value);
-    //	$user = preg_replace("/^.*User Id=(.+?);.*$/", "\\1", $value);
-    //	$pwd = preg_replace("/^.*Password=(.+?)$/", "\\1", $value);
-	//}
+	foreach ($_SERVER as $key => $value) {
+    	if (strpos($key, "MYSQLCONNSTR_localdb") !== 0) {
+        	continue;
+    	}
+    	$host = preg_replace("/^.*Data Source=(.+?);.*$/", "\\1", $value);
+    	$user = preg_replace("/^.*User Id=(.+?);.*$/", "\\1", $value);
+    	$pwd = preg_replace("/^.*Password=(.+?)$/", "\\1", $value);
+	}
 
 	$db = "registration";
 	// Connect to database.
